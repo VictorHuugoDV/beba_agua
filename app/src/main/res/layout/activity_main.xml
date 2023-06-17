@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/containerHeader"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/container_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/bebaagua"
+        app:layout_constraintStart_toStartOf="@id/containerHeader"
+        app:layout_constraintTop_toTopOf="@id/containerHeader" />
+
+    <ImageView
+        android:id="@+id/Atualizar"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_refresh"
+        app:layout_constraintEnd_toEndOf="@id/containerHeader"
+        app:layout_constraintTop_toTopOf="@id/containerHeader"/>
+
+    <EditText
+        android:id="@+id/etPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:hint="@string/hint_Peso"
+        android:inputType="numberDecimal"
+        android:maxLength="7"
+        android:padding="15dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textColorHint="@android:color/holo_blue_dark"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerHeader"
+        tools:ignore="DuplicateClickableBoundsCheck" />
+
+    <EditText
+        android:id="@+id/etIdade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:hint="@string/hint_Idade"
+        android:inputType="number"
+        android:maxLength="3"
+        android:padding="15dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textColorHint="@android:color/holo_blue_dark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerHeader"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_degrade_button"
+        android:padding="15dp"
+        android:text="@string/bt_Caucular"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPeso" />
+
+    <View
+        android:id="@+id/vwCirculo"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/container_resultado_ml"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btCalcular" />
+
+    <TextView
+        android:id="@+id/txt_resultado_ml"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="@+id/vwCirculo"
+        app:layout_constraintEnd_toEndOf="@+id/vwCirculo"
+        app:layout_constraintStart_toStartOf="@+id/vwCirculo"
+        app:layout_constraintTop_toTopOf="@+id/vwCirculo" />
+
+    <Button
+        android:id="@+id/btLembrete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="19sp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="@string/bt_Lembrete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vwCirculo" />
+
+    <Button
+        android:id="@+id/btAlarme"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="@string/bt_Alarme"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vwCirculo" />
+
+    <TextView
+        android:id="@+id/tvHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/tv_Hora"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvDoispontos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btLembrete" />
+
+    <TextView
+        android:id="@+id/tvDoispontos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/tv_doispontos"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@id/tvMinutos"
+        app:layout_constraintStart_toEndOf="@+id/tvHora"
+        app:layout_constraintTop_toBottomOf="@+id/btLembrete" />
+
+    <TextView
+        android:id="@+id/tvMinutos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="165dp"
+        android:text="@string/tv_Minutos"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvDoispontos"
+        app:layout_constraintTop_toBottomOf="@+id/btLembrete" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
